@@ -1,0 +1,12 @@
+{
+  "welcome": "Login with Password",
+  "emailInput": "Mobile Number / Email",
+  "passwordInput": "Password",
+  "loginButton": "Login",
+  "loginWithOTP": "Login with OTP",
+  "resetPassword": "Reset password",
+  "connectWith": "-- Connect with --",
+  "buyerAppButton": "Lazada Buyer APP",
+  "createNewAccountBtn": "Create a new account",
+  "description": "This app is now available in multiple languages!"
+}
