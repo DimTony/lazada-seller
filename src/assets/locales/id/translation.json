@@ -1,0 +1,12 @@
+{
+  "welcome": "Masuk dengan kata sandi",
+  "emailInput": "Nomor ponsel/Email",
+  "passwordInput": "Kata sandi",
+  "loginButton": "Masuk",
+  "loginWithOTP": "Masuk dengan OTP",
+  "resetPassword": "Reset kata sandi",
+  "connectWith": "-- Mendaftar Dengan --",
+  "buyerAppButton": "Aplikasi pembeli Lazada",
+  "createNewAccountBtn": "Daftar Sekarang",
+  "description": "This app is now available in multiple languages!"
+}

@@ -1,0 +1,12 @@
+{
+  "welcome": "使用密码登录",
+  "emailInput": "手机号码/电子邮件",
+  "passwordInput": "密码",
+  "loginButton": "登录",
+  "loginWithOTP": "使用OTP登录",
+  "resetPassword": "重置密码",
+  "connectWith": "-更多登陆方式-",
+  "buyerAppButton": "Lazada买家应用",
+  "createNewAccountBtn": "创建新账号",
+  "description": "This app is now available in multiple languages!"
+}

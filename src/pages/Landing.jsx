@@ -25,11 +25,15 @@ import PhilipinasFlagIcon from "/philipinas.svg";
 import SingaporeFlagIcon from "/singapore.svg";
 import ThailandFlagIcon from "/thailand.svg";
 import VietnamFlagIcon from "/vietnam.svg";
+import ChineseFlagIcon from "/china.svg";
+import DefaultBackground from "/lg/lg_landing_bg_malaysia_indonesia_singapore.jpg";
 import MalaysiaIndonesiaSingaporeLgBg from "/lg/lg_landing_bg_malaysia_indonesia_singapore.jpg";
 import PilipinasLgBg from "/lg/lg_landing_bg_philipinas.jpg";
 import ThailandLgBg from "/lg/lg_landing_bg_thailand.jpg";
+import ThailandLgBg2 from "/lg/lg_landing_bg_thailand2.jpg";
 import VietnamLgBg from "/lg/lg_landing_bg_vietnam.jpg";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const languages = [
   { code: "th", name: "Thailand", flag: ThailandFlagIcon },
@@ -38,23 +42,45 @@ const languages = [
   { code: "fil", name: "Pilipinas", flag: PhilipinasFlagIcon },
   { code: "en-SG", name: "Singapore", flag: SingaporeFlagIcon },
   { code: "vi", name: "Vietnam", flag: VietnamFlagIcon },
+  { code: "cn", name: "简体中文", flag: ChineseFlagIcon },
 ];
 
 const backgroundImages = {
-  th: ThailandLgBg,
-  id: MalaysiaIndonesiaSingaporeLgBg,
-  ms: MalaysiaIndonesiaSingaporeLgBg,
-  fil: PilipinasLgBg,
-  "en-SG": MalaysiaIndonesiaSingaporeLgBg,
-  vi: VietnamLgBg,
+  th: [ThailandLgBg, ThailandLgBg2],
+  id: [MalaysiaIndonesiaSingaporeLgBg],
+  ms: [MalaysiaIndonesiaSingaporeLgBg],
+  fil: [PilipinasLgBg],
+  "en-SG": [MalaysiaIndonesiaSingaporeLgBg],
+  vi: [VietnamLgBg],
+  cn: [PilipinasLgBg],
 };
 
 const Landing = () => {
+  const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
   const { t, i18n } = useTranslation();
 
+  useEffect(() => {
+    const currentLanguageImages = backgroundImages[i18n.language] || [
+      DefaultBackground,
+    ];
+
+    if (currentLanguageImages.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentBackgroundIndex(
+          (prevIndex) => (prevIndex + 1) % currentLanguageImages.length
+        );
+      }, 5000);
+
+      return () => clearInterval(interval);
+    } else {
+      setCurrentBackgroundIndex(0);
+    }
+  }, [i18n.language]);
+
   const changeLanguage = (languageCode) => {
     i18n.changeLanguage(languageCode);
+    setCurrentBackgroundIndex(0);
   };
 
   const getCurrentLanguage = () => {
@@ -63,12 +89,15 @@ const Landing = () => {
     );
   };
 
+  const getCurrentBackgroundImage = () => {
+    const currentLanguageImages = backgroundImages[i18n.language] || [
+      DefaultBackground,
+    ];
+    return currentLanguageImages[currentBackgroundIndex];
+  };
+
   const currentLanguage = getCurrentLanguage();
-  const backgroundImage =
-    backgroundImages[currentLanguage.code] || "/default-background.jpg";
-
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
-
   return (
     <>
       <Box display={{ base: "none", md: "block" }} h="100vh" overflow="hidden">
@@ -126,7 +155,8 @@ const Landing = () => {
             </Menu>
           </HStack>
           <Stack
-            bgImage={`url(${backgroundImage})`}
+            // bgImage={`url(${backgroundImage})`}
+            bgImage={`url(${getCurrentBackgroundImage()})`}
             bgSize="cover"
             bgPosition="center"
             bgRepeat="no-repeat"
