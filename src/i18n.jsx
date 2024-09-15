@@ -6,6 +6,8 @@ import enSGTranslation from "./assets/locales/en-SG/translation.json";
 import viTranslation from "./assets/locales/vi/translation.json";
 import idTranslation from "./assets/locales/id/translation.json";
 import cnTranslation from "./assets/locales/cn/translation.json";
+import msTranslation from "./assets/locales/ms/translation.json";
+import filTranslation from "./assets/locales/fil/translation.json";
 
 i18n
   .use(LanguageDetector)
@@ -13,12 +15,13 @@ i18n
   .init({
     resources: {
       th: { translation: thTranslation },
+      en: { translation: enSGTranslation },
       "en-SG": { translation: enSGTranslation },
-      ms: { translation: enSGTranslation },
-      fil: { translation: enSGTranslation },
+      fil: { translation: filTranslation },
       vi: { translation: viTranslation },
       id: { translation: idTranslation },
       cn: { translation: cnTranslation },
+      ms: { translation: msTranslation },
     },
     fallbackLng: "th",
     interpolation: {

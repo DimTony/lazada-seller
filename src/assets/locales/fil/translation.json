@@ -1,0 +1,13 @@
+{
+  "welcome": "Mag-login gamit ang Password",
+  "emailInput": "Numero ng Mobile / Email",
+  "passwordInput": "Password",
+  "loginButton": "Mag-login",
+  "loginWithOTP": "Mag-login gamit ang OTP",
+  "resetPassword": "I-reset ang Password",
+  "connectWith": "-- Kumonekta gamit ang --",
+  "buyerAppButton": "Lazada Buyer APP",
+  "createNewAccountBtn": "Gumawa ng bagong account",
+  "description": "Ang app na ito ay magagamit na sa maraming wika!",
+  "mobileWelcome": "Mag-login"
+}

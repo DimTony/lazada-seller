@@ -8,5 +8,6 @@
   "connectWith": "-- Connect with --",
   "buyerAppButton": "Lazada Buyer APP",
   "createNewAccountBtn": "Create a new account",
-  "description": "This app is now available in multiple languages!"
+  "description": "This app is now available in multiple languages!",
+  "mobileWelcome": "Login"
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { IoIosArrowBack } from "react-icons/io";
 import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 import {
   Box,
@@ -17,6 +18,12 @@ import {
   Input,
   InputGroup,
   InputRightElement,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerOverlay,
+  DrawerContent,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "lucide-react";
 import IndonesiaFlagIcon from "/indonesia.svg";
@@ -26,6 +33,7 @@ import SingaporeFlagIcon from "/singapore.svg";
 import ThailandFlagIcon from "/thailand.svg";
 import VietnamFlagIcon from "/vietnam.svg";
 import ChineseFlagIcon from "/china.svg";
+import EnglishFlagIcon from "/england-flag.svg";
 import DefaultBackground from "/lg/lg_landing_bg_malaysia_indonesia_singapore.jpg";
 import MalaysiaIndonesiaSingaporeLgBg from "/lg/lg_landing_bg_malaysia_indonesia_singapore.jpg";
 import PilipinasLgBg from "/lg/lg_landing_bg_philipinas.jpg";
@@ -34,9 +42,11 @@ import ThailandLgBg2 from "/lg/lg_landing_bg_thailand2.jpg";
 import VietnamLgBg from "/lg/lg_landing_bg_vietnam.jpg";
 import { useState } from "react";
 import { useEffect } from "react";
+import MobileMenu from "../components/MobileMenu";
 
 const languages = [
   { code: "th", name: "Thailand", flag: ThailandFlagIcon },
+  { code: "en", name: "English", flag: EnglishFlagIcon },
   { code: "id", name: "Indonesia", flag: IndonesiaFlagIcon },
   { code: "ms", name: "Malaysia", flag: MalaysiaFlagIcon },
   { code: "fil", name: "Pilipinas", flag: PhilipinasFlagIcon },
@@ -47,6 +57,13 @@ const languages = [
 
 const backgroundImages = {
   th: [ThailandLgBg, ThailandLgBg2],
+  en: [
+    MalaysiaIndonesiaSingaporeLgBg,
+    ThailandLgBg,
+    PilipinasLgBg,
+    ThailandLgBg2,
+    VietnamLgBg,
+  ],
   id: [MalaysiaIndonesiaSingaporeLgBg],
   ms: [MalaysiaIndonesiaSingaporeLgBg],
   fil: [PilipinasLgBg],
@@ -59,6 +76,7 @@ const Landing = () => {
   const [currentBackgroundIndex, setCurrentBackgroundIndex] = useState(0);
   const [showPassword, setShowPassword] = useState(false);
   const { t, i18n } = useTranslation();
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
     const currentLanguageImages = backgroundImages[i18n.language] || [
@@ -70,7 +88,7 @@ const Landing = () => {
         setCurrentBackgroundIndex(
           (prevIndex) => (prevIndex + 1) % currentLanguageImages.length
         );
-      }, 5000);
+      }, 15000);
 
       return () => clearInterval(interval);
     } else {
@@ -309,7 +327,92 @@ const Landing = () => {
         </VStack>
         Landing
       </Box>
-      <Box display={{ base: "block", md: "none" }}>Here</Box>
+      <Box display={{ base: "block", md: "none" }}>
+        <HStack p="0.5rem" justifyContent="space-between">
+          <IoIosArrowBack size="2rem" />
+          <Text>Seller Center</Text>
+          <Button
+            onClick={onOpen}
+            as={Button}
+            rightIcon={<ChevronDownIcon size="0.9rem" />}
+            variant="unstyled"
+            fontWeight="300"
+            display="flex"
+          >
+            <Image
+              src={getCurrentLanguage().flag}
+              alt={getCurrentLanguage().name}
+              h="1rem"
+              w="1rem"
+            />
+          </Button>
+        </HStack>
+        <HStack p="1rem">
+          <Text fontWeight="600" fontSize="1.3rem">
+            {t("mobileWelcome")}
+          </Text>
+        </HStack>
+        <VStack px="1rem" gap="1rem" mb="2rem">
+          <FormControl>
+            <Input
+              type="email"
+              placeholder={t("emailInput")}
+              borderRadius="25px"
+              h="50px"
+            />
+          </FormControl>
+          <FormControl>
+            <InputGroup>
+              <Input
+                type={showPassword ? "text" : "password"}
+                placeholder={t("passwordInput")}
+                borderRadius="25px"
+                h="50px"
+              />
+              <InputRightElement>
+                <Button
+                  h="1.75rem"
+                  size="sm"
+                  onClick={togglePasswordVisibility}
+                  variant="link"
+                  pt="0.5rem"
+                  pr="0.5rem"
+                >
+                  {showPassword ? (
+                    <IoEyeOutline size="1.5rem" />
+                  ) : (
+                    <IoEyeOffOutline size="1.5rem" />
+                  )}
+                </Button>
+              </InputRightElement>
+            </InputGroup>
+          </FormControl>
+        </VStack>
+
+        <Stack px="1rem">
+          <Button
+            borderRadius="25px"
+            h="50px"
+            bg="#478af8"
+            color="#fff"
+            alignSelf="stretch"
+            fontFamily="Roboto"
+            fontStyle="normal"
+            fontWeight="600"
+            lineHeight="normal"
+            mb="0.5rem"
+          >
+            <Text fontSize="1.3rem">{t("loginButton")}</Text>
+          </Button>
+        </Stack>
+        <MobileMenu
+          onClose={onClose}
+          isOpen={isOpen}
+          languages={languages}
+          changeLanguage={changeLanguage}
+          getCurrentLanguage={getCurrentLanguage}
+        />
+      </Box>
     </>
   );
 };

@@ -8,5 +8,6 @@
   "connectWith": "-- เชื่อมต่อกับ --",
   "buyerAppButton": "APP ผู้ซื้อ lazada",
   "createNewAccountBtn": "ลงทะเบียน",
-  "description": "This app is now available in multiple languages!"
+  "description": "This app is now available in multiple languages!",
+  "mobileWelcome": "เข้าสู่ระบบ"
 }

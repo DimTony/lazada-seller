@@ -8,5 +8,6 @@
   "connectWith": "-更多登陆方式-",
   "buyerAppButton": "Lazada买家应用",
   "createNewAccountBtn": "创建新账号",
-  "description": "This app is now available in multiple languages!"
+  "description": "This app is now available in multiple languages!",
+  "mobileWelcome": "登录"
 }
