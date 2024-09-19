@@ -9,5 +9,18 @@
   "buyerAppButton": "APP ผู้ซื้อ lazada",
   "createNewAccountBtn": "ลงทะเบียน",
   "description": "This app is now available in multiple languages!",
-  "mobileWelcome": "เข้าสู่ระบบ"
+  "verifyEmail": "ยืนยันอีเมล์",
+  "enterTheCode": "กรอกรหัส",
+  "errorOccured": "เกิดข้อผิดพลาด",
+  "mobileWelcome": "เข้าสู่ระบบ",
+  "mobileVerifyEmail": "ยืนยันอีเมล์",
+  "mobileProtect": "เพื่อปกป้องความปลอดภัยบัญชีของคุณ เราจำเป็นต้องตรวจสอบตัวตนของคุณ เลือกวิธีในการยืนยัน:",
+  "mobileBack": "กลับ",
+  "mobileEnterSix": "กรอกรหัส 6 หลักที่ส่งไปที่",
+  "mobileReceive": "ไม่ได้รับรหัสใช่ไหม?",
+  "mobileResend": "ส่งอีกครั้ง",
+  "mobileNext": "ต่อไป",
+  "mobileLoginFailed": "การเข้าสู่ระบบล้มเหลว Lazada ไม่ได้รับอนุญาตให้เข้าถึงข้อมูลผู้ใช้",
+  "mobileReturnToHomepage": "กลับสู่หน้าแรกเพื่อลองใหม่อีกครั้ง",
+  "mobileReturn": "กลับ"
 }

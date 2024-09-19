@@ -9,5 +9,18 @@
   "buyerAppButton": "Lazada Buyer APP",
   "createNewAccountBtn": "Gumawa ng bagong account",
   "description": "Ang app na ito ay magagamit na sa maraming wika!",
-  "mobileWelcome": "Mag-login"
+  "verifyEmail": "I-verify ang Email",
+  "enterTheCode": "Ipasok ang Code",
+  "errorOccured": "Nagkaroon ng Error",
+  "mobileWelcome": "Mag-login",
+  "mobileVerifyEmail": "I-verify ang Email",
+  "mobileProtect": "Upang maprotektahan ang seguridad ng iyong account, kailangan naming i-verify ang iyong pagkakakilanlan, pumili ng paraan upang ma-verify:",
+  "mobileBack": "Bumalik",
+  "mobileEnterSix": "Ilagay ang 6 na digit na code na ipinadala sa",
+  "mobileReceive": "Hindi nakatanggap ng code?",
+  "mobileResend": "Muling ipadala",
+  "mobileNext": "Susunod",
+  "mobileLoginFailed": "Nabigo ang Pag-login, hindi pinapayagan ang Lazada na i-access ang data ng user.",
+  "mobileReturnToHomepage": "Bumalik sa homepage upang subukang muli",
+  "mobileReturn": "Bumalik"
 }

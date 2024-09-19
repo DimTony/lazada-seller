@@ -9,5 +9,18 @@
   "buyerAppButton": "APP Pembeli Lazada",
   "createNewAccountBtn": "Buka akaun baru",
   "description": "This app is now available in multiple languages!",
-  "mobileWelcome": "Log masuk"
+  "verifyEmail": "Sahkan E-mel",
+  "enterTheCode": "Masukkan Kod",
+  "errorOccured": "Ralat Berlaku",
+  "mobileWelcome": "Log masuk",
+  "mobileVerifyEmail": "Sahkan E-mel",
+  "mobileProtect": "Untuk melindungi keselamatan akaun anda, kami perlu mengesahkan identiti anda, pilih cara untuk mengesahkan:",
+  "mobileBack": "belakang",
+  "mobileEnterSix": "Masukkan kod 6 digit yang dihantar ke",
+  "mobileReceive": "Tidak menerima kod?",
+  "mobileResend": "Hantar semula",
+  "mobileNext": "Seterusnya",
+  "mobileLoginFailed": "Log Masuk Gagal, Lazada tidak dibenarkan mengakses data pengguna.",
+  "mobileReturnToHomepage": "Kembali ke halaman utama untuk mencuba lagi",
+  "mobileReturn": "Kembali"
 }

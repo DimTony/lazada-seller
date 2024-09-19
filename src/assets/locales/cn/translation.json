@@ -9,5 +9,18 @@
   "buyerAppButton": "Lazada买家应用",
   "createNewAccountBtn": "创建新账号",
   "description": "This app is now available in multiple languages!",
-  "mobileWelcome": "登录"
+  "verifyEmail": "验证邮箱",
+  "enterTheCode": "输入代码",
+  "errorOccured": "发生错误",
+  "mobileWelcome": "登录",
+  "mobileVerifyEmail": "验证邮箱",
+  "mobileProtect": "为了保障您的账户安全，我们需要验证您的身份，请选择一种方式验证：",
+  "mobileBack": "后退",
+  "mobileEnterSix": "输入发送至",
+  "mobileReceive": "没有收到验证码？",
+  "mobileResend": "重新发送",
+  "mobileNext": "下一个",
+  "mobileLoginFailed": "登录失败，Lazada 不允许访问用户数据。",
+  "mobileReturnToHomepage": "返回主页重试",
+  "mobileReturn": "返回"
 }
