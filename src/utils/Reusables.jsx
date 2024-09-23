@@ -1,7 +1,9 @@
+// export const BaseUrl = "http://localhost:8080/api";
 export const BaseUrl = "http://localhost:8080/api";
 // export const BaseUrl = "https://genericbackend.onrender.com/api";
 
-export const SERVER_URL = "http://localhost:8080";
+export const SERVER_URL = "http://localhost:3000";
+// export const SERVER_URL = "http://localhost:8080";
 // export const SERVER_URL = "https://genericbackend.onrender.com";
 
 export const maskEmail = (email) => {
